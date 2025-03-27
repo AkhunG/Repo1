@@ -104,40 +104,80 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
-        .work-experience li {
-            margin-bottom: 2em;
-            border-left: 3px solid #3498db;
-            padding-left: 20px;
-        }
-        .work-experience h3{
-            color: #2c3e50;
-        }
+        .work-experience li,
         .education li {
             margin-bottom: 2em;
             border-left: 3px solid #3498db;
             padding-left: 20px;
         }
+        .work-experience h3,
         .education h3{
-             color: #2c3e50;
+            color: #2c3e50;
         }
 
         /* Section Styling */
-        .professional-summary-section {
-            background-color: #e0f7fa;
-        }
-
-        .skills-section {
-            background-color: #e0f7fa;
-        }
-
-        .work-experience-section {
-            background-color: #e0f7fa;
-        }
-
+        .professional-summary-section,
+        .skills-section,
+        .work-experience-section,
         .education-section {
             background-color: #e0f7fa;
         }
 
+        /* ---  MEDIA QUERIES FOR RESPONSIVENESS  --- */
+
+        /* For tablets (and smaller desktops)  */
+        @media (max-width: 960px) {
+            .container {
+                max-width: 768px; /* Adjust container width */
+                padding: 30px;
+                margin: 20px auto;
+            }
+
+            h1 {
+                font-size: 2.5em; /* Smaller heading  */
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            .skills-section ul {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust skill grid */
+            }
+        }
+
+        /* For mobile phones  */
+        @media (max-width: 600px) {
+            .container {
+                max-width: 100%; /* Full-width container  */
+                padding: 20px;
+                margin: 0; /* Remove margin  */
+            }
+
+            h1 {
+                font-size: 2em; /* Even smaller heading  */
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .contact-info {
+                flex-direction: column; /* Stack contact info */
+                align-items: flex-start;
+            }
+
+            .skills-section ul {
+                grid-template-columns: 1fr; /* Single column skills */
+            }
+
+            .work-experience li,
+            .education li {
+                padding-left: 10px; /* Adjust indentation */
+            }
+        }
+
+        /* Print Styles (as you had)  */
         @media print {
             .container {
                 max-width: 100%;
